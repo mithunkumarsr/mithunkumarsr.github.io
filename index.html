@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mithun Kumar S R — AI Researcher, Software Engineer & Professor</title>
-  <meta name="description" content="Official academic and research homepage of Mithun Kumar S R — AI researcher, software engineer, and professor working on test-time compute, multi-agent systems, NLP, machine learning, and computer vision.">
+  <meta name="description" content="Official academic homepage of Mithun Kumar S R — AI researcher, software engineer, and professor focusing on test-time compute, multi-agent reasoning, NLP, machine learning, and computer vision.">
   <link rel="canonical" href="https://mithunkumarsr.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 
   <!-- Google Knowledge Graph Entity Home Schema -->
   <script type="application/ld+json">
@@ -65,161 +68,358 @@
   </script>
 
   <style>
-    :root { --text: #1a1a1a; --muted: #555; --accent: #0b57d0; --border: #e5e7eb; --tag-bg: #f3f4f6; }
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #1d4ed8;
+      --accent-soft: #eff6ff;
+      --border: #e2e8f0;
+    }
     * { box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.65; color: var(--text); max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem; }
-    nav { display: flex; flex-wrap: wrap; gap: 1.1rem; font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-    nav a { color: var(--muted); font-weight: 500; }
-    nav a:hover { color: var(--accent); }
-    header { display: flex; gap: 1.75rem; align-items: center; margin-bottom: 2.25rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
-    header img { width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); flex-shrink: 0; }
-    h1 { margin: 0 0 0.25rem 0; font-size: 1.9rem; }
-    .subtitle { color: var(--muted); margin: 0 0 0.75rem 0; font-size: 1.05rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 0.65rem 1.1rem; font-size: 0.92rem; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.68;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 0;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    .nav-brand {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.88rem; }
+    .nav-links a { color: var(--muted); font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--accent); }
+
+    header {
+      display: flex;
+      gap: 2.25rem;
+      align-items: flex-start;
+      margin-bottom: 2.75rem;
+      padding-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .avatar-col { flex-shrink: 0; text-align: center; }
+    .avatar-col img {
+      width: 148px;
+      height: 184px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 600;
+      font-size: 2.3rem;
+      line-height: 1.15;
+      margin: 0 0 0.35rem 0;
+      letter-spacing: -0.015em;
+    }
+    .role {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 0 0 0.3rem 0;
+    }
+    .affiliations {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 1.1rem 0;
+    }
+    .profile-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.1rem; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.32rem 0.75rem;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .pill-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .pill-primary:hover { background: #1e40af; color: #fff; }
+
+    h2 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 2.75rem 0 1rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    h2 { font-size: 1.32rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
-    .tag { background: var(--tag-bg); color: #333; padding: 0.25rem 0.65rem; border-radius: 4px; font-size: 0.85rem; }
-    .item-list { list-style: none; padding: 0; margin: 0; }
-    .item-list li { margin-bottom: 1.15rem; padding-bottom: 1.15rem; border-bottom: 1px solid #f2f2f2; }
-    .item-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .item-title { font-weight: 600; font-size: 1.02rem; display: block; }
-    .item-meta { font-size: 0.88rem; color: var(--muted); margin-top: 0.15rem; }
-    .item-desc { font-size: 0.94rem; margin: 0.35rem 0 0 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-top: 1rem; }
-    .card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.15rem; }
-    .card h3 { margin: 0 0 0.3rem 0; font-size: 1.02rem; }
+
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 0.75rem;
+      font-size: 0.93rem;
+      padding: 0.45rem 0;
+    }
+    .news-date { font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .venue-badge {
+      display: inline-block;
+      text-align: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.5rem;
+      border-radius: 5px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      height: fit-content;
+      margin-top: 0.2rem;
+    }
+    .pub-title { font-weight: 600; font-size: 1rem; color: var(--text); display: block; }
+    .pub-authors { font-size: 0.9rem; color: var(--muted); margin: 0.15rem 0; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.4rem; }
+    .mini-btn {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--muted);
+      background: #fff;
+    }
+    .mini-btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+    }
+    .card h3 { margin: 0 0 0.3rem 0; font-size: 1rem; }
     .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
-    article { margin-bottom: 1.75rem; }
-    article h3 { margin: 0 0 0.2rem 0; font-size: 1.12rem; }
-    .date { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.65rem; }
-    footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
-    @media (max-width: 560px) { header { flex-direction: column; align-items: flex-start; } }
+
+    article.essay {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 1rem;
+    }
+    article.essay h3 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.35rem;
+      margin: 0 0 0.25rem 0;
+    }
+    .essay-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+    @media (max-width: 620px) {
+      header { flex-direction: column; }
+      .pub-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .news-list li { grid-template-columns: 1fr; gap: 0.1rem; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
-    <a href="#talks">Talks &amp; Conferences</a>
-    <a href="#projects">Open Source</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#blog">Research Notes</a>
+    <a class="nav-brand" href="#">Mithun Kumar S R</a>
+    <div class="nav-links">
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#opensource">Code</a>
+      <a href="#service">Service</a>
+      <a href="#notes">Research Notes</a>
+    </div>
   </nav>
 
   <header>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mithun_Kumar_S_R_2026.jpg" alt="Mithun Kumar S R">
+    <div class="avatar-col">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mithun_Kumar_S_R_2026.jpg" alt="Mithun Kumar S R">
+    </div>
     <div>
       <h1>Mithun Kumar S R</h1>
-      <p class="subtitle">AI Researcher, Software Engineer &amp; Professor</p>
-      <div class="links">
-        <a href="https://scholar.google.com/citations?user=UTejASkAAAAJ" rel="me">Google Scholar</a>
-        <a href="https://orcid.org/0000-0002-1152-143X" rel="me">ORCID</a>
-        <a href="https://openreview.net/profile?id=~Mithun_Kumar_S_R2" rel="me">OpenReview</a>
-        <a href="https://github.com/mithunkumarsr" rel="me">GitHub</a>
-        <a href="https://www.wikidata.org/wiki/Q142166447" rel="me">Wikidata</a>
+      <p class="role">AI Researcher, Software Engineer &amp; Professor</p>
+      <p class="affiliations">Alumnus, Birla Institute of Technology and Science (BITS) · Formerly Google, Uber, Amazon</p>
+      <div class="profile-pills">
+        <a class="pill pill-primary" href="https://scholar.google.com/citations?user=UTejASkAAAAJ" rel="me">Google Scholar</a>
+        <a class="pill" href="https://orcid.org/0000-0002-1152-143X" rel="me">ORCID</a>
+        <a class="pill" href="https://openreview.net/profile?id=~Mithun_Kumar_S_R2" rel="me">OpenReview</a>
+        <a class="pill" href="https://github.com/mithunkumarsr" rel="me">GitHub</a>
+        <a class="pill" href="https://www.wikidata.org/wiki/Q142166447" rel="me">Wikidata</a>
       </div>
+      <p style="margin: 0; font-size: 0.96rem;">
+        My research focuses on <strong>inference-time reasoning</strong>, <strong>multi-agent systems</strong>,
+        <strong>natural language processing</strong>, and <strong>grounded computer vision</strong>. I study how
+        foundation models can plan, verify intermediate reasoning steps, and collaborate with external tools
+        reliably in real-world scientific and engineering environments.
+      </p>
     </div>
   </header>
 
   <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am <strong>Mithun Kumar S R</strong>, an AI researcher, software engineer, and professor working across
-        <strong>artificial intelligence</strong>, <strong>natural language processing (NLP)</strong>,
-        <strong>machine learning</strong>, <strong>multi-agent systems</strong>, and <strong>computer vision</strong>.
-        I am an alumnus of the Birla Institute of Technology and Science (BITS) and have held research and
-        engineering roles at Google, Uber, and Amazon.
-      </p>
-      <div class="tags">
-        <span class="tag">Natural Language Processing</span>
-        <span class="tag">Multi-Agent Systems</span>
-        <span class="tag">Test-Time Compute &amp; Reasoning</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Explainable AI (XAI)</span>
-        <span class="tag">Agentic AI</span>
-      </div>
+    <section id="news">
+      <h2>Selected News</h2>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">Nov 2026</span>
+          <span>Released open-source multi-agent reasoning benchmarks in <a href="https://github.com/mithunkumarsr/NeurIPS-MAS-2026">NeurIPS-MAS-2026</a>.</span>
+        </li>
+        <li>
+          <span class="news-date">Sep 2026</span>
+          <span>Published <a href="https://github.com/mithunkumarsr/agentic-ai-in-practice">agentic-ai-in-practice</a> covering verifiable tool-use loops and reflection architectures.</span>
+        </li>
+        <li>
+          <span class="news-date">2026</span>
+          <span>Serving as peer reviewer and program committee member across leading AI &amp; NLP venues.</span>
+        </li>
+      </ul>
     </section>
 
     <section id="publications">
       <h2>Selected Publications &amp; Preprints</h2>
-      <ul class="item-list">
-        <li>
-          <span class="item-title">[Paper Title 1 — e.g., Verifiable Multi-Agent Reasoning at Inference Time]</span>
-          <div class="item-meta"><strong>Mithun Kumar S R</strong>, Co-authors · <em>NeurIPS / ACL / ICLR / arXiv (2026)</em></div>
-          <p class="item-desc">
-            <a href="https://scholar.google.com/citations?user=UTejASkAAAAJ" target="_blank">[Google Scholar]</a> ·
-            <a href="https://openreview.net/profile?id=~Mithun_Kumar_S_R2" target="_blank">[OpenReview]</a>
-          </p>
-        </li>
-        <li>
-          <span class="item-title">[Paper Title 2 — Add your key publication or patent here]</span>
-          <div class="item-meta"><strong>Mithun Kumar S R</strong>, Co-authors · <em>Conference / Journal / Patent Venue</em></div>
-          <p class="item-desc">
-            <a href="https://scholar.google.com/citations?user=UTejASkAAAAJ" target="_blank">[Citation &amp; Abstract]</a>
-          </p>
-        </li>
-      </ul>
-    </section>
+      <div class="pub-item">
+        <span class="venue-badge">NeurIPS '26</span>
+        <div>
+          <span class="pub-title">[Replace with Your Paper Title — e.g., Verifiable Multi-Agent Coordination under Bounded Test-Time Compute]</span>
+          <div class="pub-authors"><strong>Mithun Kumar S R</strong>, Co-author A, Co-author B</div>
+          <div class="pub-links">
+            <a class="mini-btn" href="https://scholar.google.com/citations?user=UTejASkAAAAJ">Paper / Scholar</a>
+            <a class="mini-btn" href="https://openreview.net/profile?id=~Mithun_Kumar_S_R2">OpenReview</a>
+            <a class="mini-btn" href="https://github.com/mithunkumarsr/NeurIPS-MAS-2026">Code</a>
+          </div>
+        </div>
+      </div>
 
-    <section id="talks">
-      <h2>Talks, Keynotes &amp; Conferences</h2>
-      <ul class="item-list">
-        <li>
-          <span class="item-title">[Invited Talk / Keynote Title — e.g., Scaling Agentic AI &amp; Verifiable Reasoning in Production]</span>
-          <div class="item-meta"><strong>Speaker</strong> · [Conference / University / Symposium Name] · 2026</div>
-          <p class="item-desc">Presented architectures for inference-time search, process verification, and multi-agent orchestration.</p>
-        </li>
-        <li>
-          <span class="item-title">[Conference Tutorial / Workshop Presentation Title]</span>
-          <div class="item-meta"><strong>Presenter / Panelist</strong> · [Venue / Workshop Name] · 2025</div>
-          <p class="item-desc">Discussion on grounded multimodal representations and explainable machine learning systems.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Open-Source Research &amp; Engineering</h2>
-      <div class="grid">
-        <div class="card">
-          <h3><a href="https://github.com/mithunkumarsr/NeurIPS-MAS-2026" target="_blank">NeurIPS-MAS-2026</a></h3>
-          <p>Experimental frameworks and benchmarks for coordinated multi-agent systems and verifiable inference.</p>
-        </div>
-        <div class="card">
-          <h3><a href="https://github.com/mithunkumarsr/agentic-ai-in-practice" target="_blank">agentic-ai-in-practice</a></h3>
-          <p>Production patterns for tool-using agents, reflection loops, and structured reasoning pipelines.</p>
-        </div>
-        <div class="card">
-          <h3><a href="https://github.com/mithunkumarsr/XAI" target="_blank">XAI (Explainable AI)</a></h3>
-          <p>Interpretability methods, attribution analysis, and transparency tooling for deep neural models.</p>
-        </div>
-        <div class="card">
-          <h3><a href="https://github.com/mithunkumarsr/LearnComputerVisionWithMithun" target="_blank">LearnComputerVisionWithMithun</a></h3>
-          <p>Open-source educational notebooks and implementations covering modern visual perception.</p>
+      <div class="pub-item">
+        <span class="venue-badge">ACL / ICLR</span>
+        <div>
+          <span class="pub-title">[Replace with Your Second Key Paper or Technical Disclosure Title]</span>
+          <div class="pub-authors"><strong>Mithun Kumar S R</strong>, Co-authors</div>
+          <div class="pub-links">
+            <a class="mini-btn" href="https://scholar.google.com/citations?user=UTejASkAAAAJ">Paper / Scholar</a>
+            <a class="mini-btn" href="https://openreview.net/profile?id=~Mithun_Kumar_S_R2">OpenReview</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="teaching">
-      <h2>Teaching &amp; Academic Courses</h2>
-      <ul class="item-list">
-        <li>
-          <span class="item-title">Computer Science, Computer Vision &amp; Python Series</span>
-          <div class="item-meta">Open Educational Resources · <a href="https://github.com/mithunkumarsr/LearnCSWithMithun" target="_blank">LearnCSWithMithun</a> · <a href="https://github.com/mithunkumarsr/LearnPythonWithMithun" target="_blank">LearnPythonWithMithun</a></div>
-          <p class="item-desc">Lecture notes, hands-on coding labs, and foundational curricula in computer science, machine learning, and computer vision.</p>
-        </li>
-      </ul>
+    <section id="talks">
+      <h2>Invited Talks, Keynotes &amp; Tutorials</h2>
+      <div class="pub-item">
+        <span class="venue-badge">Keynote</span>
+        <div>
+          <span class="pub-title">[Talk Title — e.g., From Pre-Training Scale to Verifiable Test-Time Reasoning]</span>
+          <div class="pub-authors">[Conference / University / Symposium Name] · 2026</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="venue-badge">Tutorial</span>
+        <div>
+          <span class="pub-title">[Tutorial / Workshop Title — e.g., Designing Interpretable Multi-Agent Systems]</span>
+          <div class="pub-authors">[Venue / Workshop Name] · 2025</div>
+        </div>
+      </div>
     </section>
 
-    <section id="blog">
-      <h2>Blog &amp; Research Notes</h2>
+    <section id="opensource">
+      <h2>Open-Source Research &amp; Teaching</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3><a href="https://github.com/mithunkumarsr/NeurIPS-MAS-2026">NeurIPS-MAS-2026</a></h3>
+          <p>Benchmarks and evaluation harnesses for multi-agent systems and test-time verification.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/mithunkumarsr/agentic-ai-in-practice">agentic-ai-in-practice</a></h3>
+          <p>Reference implementations for tool-augmented agents and process-supervised reasoning.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/mithunkumarsr/XAI">Explainable AI (XAI)</a></h3>
+          <p>Feature attribution, mechanistic interpretability, and model auditing utilities.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/mithunkumarsr/LearnComputerVisionWithMithun">Computer Vision &amp; CS Curricula</a></h3>
+          <p>Open lecture repositories: <a href="https://github.com/mithunkumarsr/LearnComputerVisionWithMithun">Computer Vision</a> · <a href="https://github.com/mithunkumarsr/LearnCSWithMithun">CS Foundations</a> · <a href="https://github.com/mithunkumarsr/LearnPythonWithMithun">Python</a>.</p>
+        </div>
+      </div>
+    </section>
 
-      <article id="post-1">
+    <section id="service">
+      <h2>Academic Service &amp; Reviewing</h2>
+      <p style="font-size: 0.94rem; margin: 0;">
+        <strong>Reviewer / Program Committee:</strong> NeurIPS, ICLR, ICML, ACL, EMNLP, CVPR (update with your exact venues).<br>
+        <strong>Mentorship &amp; Teaching:</strong> Graduate and undergraduate instruction in Machine Learning, Natural Language Processing, Computer Vision, and Software Systems.
+      </p>
+    </section>
+
+    <section id="notes">
+      <h2>Research Notes</h2>
+      <article class="essay" id="post-1">
         <h3>From Static Scaling to Test-Time Compute and Verifiable Agentic Systems</h3>
-        <div class="date">November 14, 2026 · Research Note</div>
+        <div class="essay-meta">November 14, 2026 · Research Note</div>
         <p>
           Over the past two years, the center of gravity in machine learning has shifted from pure pre-training
           parameter scaling toward <strong>inference-time reasoning</strong>, <strong>process-supervised reinforcement learning</strong>,
@@ -247,17 +447,13 @@
             mechanisms where specialized agents decompose complex tasks with bounded latency and formal interpretability.
           </li>
         </ul>
-        <p>
-          Future posts here will unpack experimental findings, evaluation benchmarks, and open-source implementations
-          exploring these directions.
-        </p>
       </article>
     </section>
   </main>
 
   <footer>
-    &copy; 2026 Mithun Kumar S R · Canonical Entity Home ·
-    <a href="https://www.wikidata.org/wiki/Q142166447">Wikidata Q142166447</a>
+    <span>&copy; 2026 Mithun Kumar S R · Canonical Entity Home</span>
+    <span>Knowledge Graph ID: <a href="https://www.wikidata.org/wiki/Q142166447">Wikidata Q142166447</a></span>
   </footer>
 
 </body>
