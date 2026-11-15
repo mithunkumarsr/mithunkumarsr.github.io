@@ -543,6 +543,99 @@
           multimodal state over long horizons, and building formal evaluation benchmarks for interacting agents.
         </p>
       </article>
+
+
+      <article class="writing" id="post-3">
+        <h3>Distilling Language Models for Sub-5ms Inference at Search Scale</h3>
+        <div class="writing-date">September 2026</div>
+        <p>
+          Deploying neural language models inside real-time search pipelines imposes a strict latency budget where
+          every millisecond directly affects user experience and fleet-wide compute cost. While offline benchmarks
+          reward parameter count, production serving at billion-query scale requires aggressive distillation,
+          quantization, and architecture simplification.
+        </p>
+        <p>
+          In moving grammar and text-refinement models to a 4.1 ms mean latency envelope (a 9&times; speedup over
+          baseline serving), three engineering choices proved decisive:
+        </p>
+        <ul>
+          <li>
+            <strong>Task-Specific Student Topologies:</strong> Replacing deep, general-purpose transformer stacks
+            with shallow, wide student architectures trained via sequence-level knowledge distillation preserves over
+            98% of precision on narrow linguistic tasks while cutting memory bandwidth bottlenecks.
+          </li>
+          <li>
+            <strong>Static Shape Compilation &amp; Int8 Quantization:</strong> Eliminating dynamic padding overhead
+            through bucketed sequence lengths and post-training quantization keeps accelerator utilization predictable
+            under spiky traffic.
+          </li>
+          <li>
+            <strong>Cascaded Routing:</strong> Pairing lightweight deterministic filters with neural inference
+            ensures that expensive forward passes run only on ambiguous inputs, dramatically reducing total OPEX.
+          </li>
+        </ul>
+      </article>
+
+      <article class="writing" id="post-4">
+        <h3>Runtime Guardrails and Explainability for Enterprise AI Agents</h3>
+        <div class="writing-date">May 2026</div>
+        <p>
+          Enterprise adoption of autonomous agents stalls when organizations cannot audit why an agent chose a
+          particular tool or verify that its actions comply with internal policy. Relying solely on system-prompt
+          instructions is insufficient—models remain vulnerable to indirect prompt injection and distributional drift.
+        </p>
+        <p>
+          Drawing on both explainable AI (XAI) methods and regulatory compliance principles, dependable enterprise
+          agent platforms enforce governance outside the model weights:
+        </p>
+        <ul>
+          <li>
+            <strong>Deterministic Pre-Execution Interceptors:</strong> Every state-mutating tool call passes through
+            a policy engine that validates permissions, data-residency boundaries, and schema invariants before
+            execution.
+          </li>
+          <li>
+            <strong>Traceable Attribution Logs:</strong> Recording retrieved context chunks, intermediate reasoning
+            steps, and feature-attribution signals creates an immutable audit trail suitable for regulated review.
+          </li>
+          <li>
+            <strong>Bounded Autonomy Tiers:</strong> Graduating workflows from human-in-the-loop approval to
+            autonomous execution based on empirical confidence calibration rather than static prompts.
+          </li>
+        </ul>
+      </article>
+
+      <article class="writing" id="post-5">
+        <h3>Context-Aware Representation for Code-Switched Natural Language</h3>
+        <div class="writing-date">December 2025</div>
+        <p>
+          Hundreds of millions of speakers naturally alternate between languages within a single sentence—such as
+          Hinglish or Spanglish—yet standard subword tokenizers and monolingual evaluation benchmarks treat
+          code-switching as noise. When speakers mix scripts or borrow syntactic structures across languages,
+          naively fine-tuned models frequently misclassify intent or hallucinate entity boundaries.
+        </p>
+        <p>
+          Building reliable NLP systems for multilingual populations requires explicitly modeling cross-lingual
+          transitions—combining probabilistic language-identification priors at the token span level with
+          generative refinement that preserves colloquial semantics without erasing speaker intent.
+        </p>
+      </article>
+
+      <article class="writing" id="post-6">
+        <h3>From Tools to Collaborative Partners: Lessons from Writing Agentic AI</h3>
+        <div class="writing-date">July 2025</div>
+        <p>
+          When I began writing <em>Agentic AI: From Tools to Collaborative Partners</em>, most industry discussions
+          treated agents as thin wrappers around prompt chains. In production, however, reliable autonomy depends
+          far less on prompt engineering and far more on classic distributed-systems discipline: state management,
+          idempotent tool interfaces, failure recovery, and clear human-agent handoff boundaries.
+        </p>
+        <p>
+          The most effective enterprise deployments treat foundation models as reasoning components inside a larger,
+          deterministic software architecture—combining symbolic constraints with neural flexibility.
+        </p>
+      </article>
+      
     </section>
   </main>
 
