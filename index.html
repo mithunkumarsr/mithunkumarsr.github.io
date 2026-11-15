@@ -492,6 +492,48 @@
     <section id="writing">
       <h2>Writing</h2>
 
+      <article class="writing" id="post-7">
+        <h3>Musings on Physical AI: When Agentic Systems Meet Contact Dynamics and Hard Real-Time Constraints</h3>
+        <div class="writing-date">November 2026</div>
+        <p>
+          Digital agents operate in forgiving, reversible environments: an API call can be retried, a malformed JSON
+          payload can be re-sampled, and a 400-millisecond pause is merely a UX nuisance. Physical AI—embodied
+          systems that perceive, plan, and act across robotics, industrial automation, and spatial environments—strips
+          away all three safety nets. Once a model commands actuators in the physical world, latency becomes
+          instability, hallucination becomes mechanical damage, and sim-to-real distribution shift becomes the primary
+          bottleneck.
+        </p>
+        <p>
+          Bridging foundation-model reasoning with classical control theory points toward four architectural shifts
+          that will define dependable physical AI systems:
+        </p>
+        <ul>
+          <li>
+            <strong>Hierarchical Temporal Decomposition (Slow Reasoning, Fast Control):</strong> A multi-billion-parameter
+            vision-language-action model cannot sit inside a 1 kHz torque-control loop. Reliable embodied architectures
+            decouple high-level semantic planning and goal arbitration (running at 1–5 Hz) from low-level visuomotor
+            policies and model-predictive controllers that enforce kinematic and dynamic stability at millisecond rates.
+          </li>
+          <li>
+            <strong>Physics-Grounded World Models Over Pixel Prediction:</strong> Generating photorealistic future
+            frames is not the same as understanding friction, compliance, or contact forces. Actionable world models
+            need latent representations constrained by conservation laws and rigid-body dynamics so agents can evaluate
+            counterfactual trajectories before committing force.
+          </li>
+          <li>
+            <strong>Tactile and Proprioceptive Multimodality:</strong> Vision alone fails under occlusion, specular
+            glare, and fine manipulation. Fusing high-frequency force-torque and proprioceptive feedback with spatial
+            perception turns brittle open-loop grasps into closed-loop, adaptive contact policies.
+          </li>
+          <li>
+            <strong>Hardware-Enforced Safety Envelopes:</strong> Just as enterprise software agents require deterministic
+            pre-execution policy interceptors, physical agents require formal control barrier functions and kinematic
+            watchdogs at the firmware layer—ensuring that no upstream token generation can violate velocity, force, or
+            workspace boundaries.
+          </li>
+        </ul>
+      </article>
+
       <article class="writing" id="post-2">
         <h3>Multi-Agent Orchestration, Hierarchical Memory, and Goal Arbitration</h3>
         <div class="writing-date">November 2026</div>
